@@ -1,0 +1,11 @@
+{
+  "name": "@omni/core",
+  "version": "0.0.0",
+  "main": "dist/server",
+  "repository": "chielkunkels/omni",
+  "author": "chielkunkels",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
