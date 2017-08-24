@@ -7,10 +7,15 @@
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint --ext=js --ext=jsx packages/*/src"
+    "eslint": "eslint --ext=js --ext=jsx packages/*/src",
+    "watch": "lerna exec --parallel -- babel -w -d dist src"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
     "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
