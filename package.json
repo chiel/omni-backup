@@ -1,0 +1,8 @@
+{
+  "name": "omni",
+  "version": "0.0.0",
+  "description": "An extensible headless cms.",
+  "repository": "chielkunkels/omni",
+  "author": "chielkunkels",
+  "license": "MIT"
+}
