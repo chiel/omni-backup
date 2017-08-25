@@ -4,6 +4,7 @@ import createHandleRequest from './utils/createHandleRequest';
 import handleErrorMiddleware from './utils/handleErrorMiddleware';
 import notFoundMiddleware from './utils/notFoundMiddleware';
 
+import inputTypes from '../app/inputs';
 import routes from '../app/routes';
 
 export default class Omni {
@@ -11,7 +12,7 @@ export default class Omni {
 		appPort: 12831,
 	}
 
-	pluginApi = {}
+	pluginApi = { inputTypes }
 	plugins = []
 
 	constructor(config = {}) {
