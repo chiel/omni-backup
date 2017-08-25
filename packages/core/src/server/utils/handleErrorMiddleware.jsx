@@ -1,5 +1,6 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+
+import renderDocument from './renderDocument';
 
 import ErrorMessage from '../../app/components/ErrorMessage';
 import Root from '../../app/components/Root';
@@ -10,7 +11,7 @@ export default function handleErrorMiddleware(err, req, res, next) {
 		console.error(err.stack || err);
 	}
 
-	const markup = renderToString(
+	const markup = renderDocument(
 		<Root>
 			<ErrorMessage error={err} />
 		</Root>,
