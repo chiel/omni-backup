@@ -7,8 +7,10 @@
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {
+    "clean": "lerna exec --parallel -- rimraf dist",
     "eslint": "eslint --ext=js --ext=jsx packages/*/src",
-    "watch": "lerna exec --parallel -- babel -w -d dist src"
+    "watch": "npm-run-all clean -p watch:*",
+    "watch:scripts": "lerna exec --parallel -- babel -w -d dist src"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -21,7 +23,9 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "lerna": "^2.0.0"
+    "lerna": "^2.0.0",
+    "npm-run-all": "^4.0.2",
+    "rimraf": "^2.6.1"
   },
   "dependencies": {
     "prop-types": "^15.5.8",
