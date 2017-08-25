@@ -1,5 +1,6 @@
 import PT from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export default class Root extends React.PureComponent {
 	static propTypes = {
@@ -15,6 +16,12 @@ export default class Root extends React.PureComponent {
 
 		return (
 			<div>
+				<Helmet
+					defaultTitle="Omni"
+					titleTemplate="%s &middot; Omni"
+				>
+					<html lang="en" />
+				</Helmet>
 				{children}
 			</div>
 		);
