@@ -71,3 +71,35 @@
 		height: 100%;
 	}
 }
+
+.options {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.option {
+	display: flex;
+	align-items: center;
+
+	input {
+		margin: 0;
+	}
+
+	label {
+		margin: 0 0 0 16px;
+	}
+}
+
+.clear {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font: inherit;
+	font-size: 12px;
+	font-weight: 400;
+
+	&:focus {
+		outline: 0;
+	}
+}

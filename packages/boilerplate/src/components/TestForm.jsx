@@ -27,6 +27,7 @@ export class TestForm extends React.PureComponent {
 				<fields.last_name />
 				<fields.password />
 				<fields.biography />
+				<fields.gender />
 				<button type="submit">submit</button>
 			</form>
 		);
@@ -70,6 +71,16 @@ export default withForm({
 			placeholder: 'e.g. I have a horse. My horse is amazing.',
 			validators: [
 				validators.required('Please tell us about yourself.'),
+			],
+		},
+		gender: {
+			type: 'single_option',
+			label: 'Gender',
+			name: 'gender',
+			options: [
+				{ label: 'Male', value: 'male' },
+				{ label: 'Female', value: 'female' },
+				{ label: 'Other', value: 'other' },
 			],
 		},
 	},
