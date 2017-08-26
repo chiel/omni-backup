@@ -1,3 +1,5 @@
+import inputsPlugin from '@omni/inputs';
+
 import inputTypes from './inputs';
 import routes from './routes';
 
@@ -8,7 +10,9 @@ export default class Omni {
 
 	pluginApi = { inputTypes }
 
-	plugins = []
+	plugins = [
+		inputsPlugin,
+	]
 
 	constructor(config = {}) {
 		this.config = {

@@ -1,0 +1,21 @@
+.input {
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid #ccc;
+	line-height: inherit;
+
+	> input,
+	> textarea {
+		flex-grow: 1;
+		padding: 0;
+		border: 0;
+		color: #aaa;
+		font: inherit;
+		transition: padding .2s ease-out;
+
+		&:focus {
+			color: #444;
+			outline: 0;
+		}
+	}
+}
