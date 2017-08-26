@@ -19,3 +19,28 @@
 		}
 	}
 }
+
+.icon {
+	width: 36px;
+	padding: 0;
+	border: 0;
+	background: transparent no-repeat right center / 24px;
+	font: inherit;
+	font-size: 12px;
+	font-weight: 400;
+	text-indent: -999em;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.iconEye {
+	background-image: svg-load('../images/icon-eye.svg', fill: #999);
+	opacity: .5;
+	transition: opacity .2s ease-out;
+
+	&.iconActive {
+		opacity: 1;
+	}
+}
