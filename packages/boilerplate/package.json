@@ -1,18 +1,23 @@
 {
   "name": "@omni/boilerplate",
   "version": "0.0.0",
-  "main": "dist/server",
+  "main": "dist",
   "repository": "chielkunkels/omni",
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {
     "start": "node dist/server",
-    "watch": "nodemon dist/server"
+    "watch": "../../node_modules/.bin/npm-run-all -p watch:*",
+    "watch:client": "webpack -w",
+    "watch:nodemon": "nodemon dist"
   },
   "dependencies": {
     "@omni/core": "0.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "nodemon": "^1.11.0",
+    "webpack": "^3.5.5"
   }
 }

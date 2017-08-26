@@ -2,8 +2,8 @@ import React from 'react';
 
 import renderDocument from './renderDocument';
 
-import ErrorMessage from '../../app/components/ErrorMessage';
-import Root from '../../app/components/Root';
+import ErrorMessage from '../components/ErrorMessage';
+import Root from '../components/Root';
 
 // eslint-disable-next-line no-unused-vars
 export default function handleErrorMiddleware(err, req, res, next) {

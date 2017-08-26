@@ -16,7 +16,8 @@ export default function renderDocument(component) {
 		${helmet.title.toString()}
 	</head>
 	<body>
-		<div id="app-container">${markup}</div>
+		<div id="omni-container">${markup}</div>
+		<script src="/js/app.js"></script>
 	</body>
 </html>`
 	);

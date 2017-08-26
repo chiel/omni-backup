@@ -1,7 +1,8 @@
 {
   "name": "@omni/core",
   "version": "0.0.0",
-  "main": "dist/server",
+  "main": "dist/OmniServer",
+  "browser": "dist/OmniClient",
   "repository": "chielkunkels/omni",
   "author": "chielkunkels",
   "license": "MIT",
