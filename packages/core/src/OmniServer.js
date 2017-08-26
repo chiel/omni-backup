@@ -1,3 +1,5 @@
+import './utils/cssLoader';
+
 import express from 'express';
 
 import Omni from './Omni';

@@ -1,7 +1,10 @@
+/* eslint-disable global-require */
+const CSSPlugin = require('modular-css-webpack/plugin');
+
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		filename: '../core/dist/public/js/app.js',
+		filename: '../core/dist/public/js/omni.js',
 	},
 
 	devtool: 'eval-source-map',
@@ -18,6 +21,23 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 			},
+			{
+				test: /\.css$/,
+				use: 'modular-css-webpack/loader',
+			},
 		],
 	},
+
+	plugins: [
+		new CSSPlugin({
+			css: '../core/dist/public/css/omni.css',
+			json: '../core/dist/styles.json',
+			after: [
+				require('postcss-import')(),
+				require('postcss-nested'),
+				require('postcss-color-function'),
+				require('postcss-inline-svg')(),
+			],
+		}),
+	],
 };

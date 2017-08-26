@@ -6,8 +6,9 @@
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {
+    "build": "webpack",
     "start": "node dist/server",
-    "watch": "../../node_modules/.bin/npm-run-all -p watch:*",
+    "watch": "../../node_modules/.bin/npm-run-all build -p watch:*",
     "watch:client": "webpack -w",
     "watch:nodemon": "nodemon dist"
   },
@@ -17,7 +18,12 @@
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "modular-css-webpack": "^5.2.4",
     "nodemon": "^1.11.0",
+    "postcss-color-function": "^4.0.0",
+    "postcss-import": "^10.0.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-nested": "^1.0.0",
     "webpack": "^3.5.5"
   }
 }

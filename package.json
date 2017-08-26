@@ -10,7 +10,7 @@
     "clean": "lerna exec --parallel -- rimraf dist",
     "eslint": "eslint --ext=js --ext=jsx packages/*/src",
     "watch": "npm-run-all clean -p watch:*",
-    "watch:scripts": "lerna exec --parallel -- babel -w -d dist src"
+    "watch:scripts": "lerna exec --parallel -- babel -w -D -d dist src"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
