@@ -5,6 +5,7 @@ import routes from './routes';
 
 export default class Omni {
 	static defaultConfig = {
+		apiPort: 12830,
 		appPort: 12831,
 	}
 
