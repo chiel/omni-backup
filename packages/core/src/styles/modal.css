@@ -1,0 +1,53 @@
+.backdrop {
+	overflow: auto;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 75px 0;
+	background: color(#000 a(50%));
+}
+
+.modal {
+	max-width: 800px;
+	margin: 0 auto;
+	background: #fff;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 56px;
+	border-bottom: 1px solid #ddd;
+}
+
+.title {
+	padding: 0 0 0 16px;
+	font-size: 24px;
+	line-height: 56px;
+}
+
+.close {
+	display: block;
+	width: 56px;
+	height: 56px;
+	padding: 0;
+	border: 0;
+	background: transparent svg-load('../images/icon-close.svg', fill: #999) no-repeat center / 24px;
+	text-indent: -999em;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.body {
+	padding: 16px;
+}

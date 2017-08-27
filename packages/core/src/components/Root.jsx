@@ -1,5 +1,6 @@
 import PT from 'prop-types';
 import React from 'react';
+import { GatewayDest, GatewayProvider } from 'react-gateway';
 import { Helmet } from 'react-helmet';
 
 export default class Root extends React.PureComponent {
@@ -22,7 +23,14 @@ export default class Root extends React.PureComponent {
 				>
 					<html lang="en" />
 				</Helmet>
-				{children}
+				<GatewayProvider>
+					<div>
+						<div id="omni-app">
+							{children}
+						</div>
+						<GatewayDest name="modal" />
+					</div>
+				</GatewayProvider>
 			</div>
 		);
 	}
