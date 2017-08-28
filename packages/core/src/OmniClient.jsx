@@ -2,10 +2,13 @@ import './styles/base.css';
 
 import React from 'react';
 import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
 import { browserHistory, Router } from 'react-router';
+import { createStore } from 'redux';
 
 import Omni from './Omni';
 import NotFoundError from './components/NotFoundError';
+import reducer from './reducers';
 
 export default class OmniClient extends Omni {
 	start() {
@@ -18,8 +21,13 @@ export default class OmniClient extends Omni {
 			component: NotFoundError,
 		});
 
+		const store = createStore(reducer, window.INITIAL_STATE);
+		window.store = store;
+
 		hydrate(
-			<Router routes={this.routes} history={browserHistory} />,
+			<Provider store={store}>
+				<Router routes={this.routes} history={browserHistory} />
+			</Provider>,
 			document.getElementById('omni-container'),
 		);
 	}

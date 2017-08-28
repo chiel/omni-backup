@@ -4,6 +4,7 @@ import express from 'express';
 
 import Omni from './Omni';
 import createHandleRequest from './utils/createHandleRequest';
+import createStoreMiddleware from './utils/createStoreMiddleware';
 import handleErrorApiMiddleware from './utils/handleErrorApiMiddleware';
 import handleErrorMiddleware from './utils/handleErrorMiddleware';
 import notFoundMiddleware from './utils/notFoundMiddleware';
@@ -18,6 +19,7 @@ export default class OmniServer extends Omni {
 
 		this.app = express();
 		this.app.disable('x-powered-by');
+		this.app.use(createStoreMiddleware);
 		this.pluginApi.app = this.app;
 	}
 

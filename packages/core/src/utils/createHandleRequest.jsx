@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 
 import renderDocument from './renderDocument';
@@ -19,7 +20,10 @@ export default function createHandleRequest(routes) {
 			}
 
 			const markup = renderDocument(
-				<RouterContext {...props} />,
+				<Provider store={req.store}>
+					<RouterContext {...props} />
+				</Provider>,
+				req.store.getState(),
 			);
 
 			res.send(markup);
