@@ -1,0 +1,21 @@
+.backdrop {
+	overflow: auto;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 75px 0;
+	background: color(#000 a(50%));
+}
+
+.modal {
+	max-width: 800px;
+	margin: 0 auto;
+	background: #fff;
+
+	&:focus {
+		outline: 0;
+	}
+}
