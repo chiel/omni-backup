@@ -18,6 +18,7 @@ export default class OmniServer extends Omni {
 
 		this.app = express();
 		this.app.disable('x-powered-by');
+		this.pluginApi.app = this.app;
 	}
 
 	start() {
