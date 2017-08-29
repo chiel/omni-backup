@@ -9,6 +9,7 @@ import { createStore } from 'redux';
 import Omni from './Omni';
 import NotFoundError from './components/NotFoundError';
 import reducer from './reducers';
+import middleware from './utils/reduxMiddleware';
 
 export default class OmniClient extends Omni {
 	start() {
@@ -21,7 +22,7 @@ export default class OmniClient extends Omni {
 			component: NotFoundError,
 		});
 
-		const store = createStore(reducer, window.INITIAL_STATE);
+		const store = createStore(reducer, window.INITIAL_STATE, middleware);
 		window.store = store;
 
 		hydrate(
