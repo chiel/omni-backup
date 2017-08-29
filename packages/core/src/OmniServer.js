@@ -2,6 +2,7 @@ import './utils/cssLoader';
 
 import cors from 'cors';
 import express from 'express';
+import { combineReducers } from 'redux';
 
 import Omni from './Omni';
 import createHandleRequest from './utils/createHandleRequest';
@@ -21,9 +22,13 @@ export default class OmniServer extends Omni {
 
 		this.app = express();
 		this.app.disable('x-powered-by');
-		this.app.use(createStoreMiddleware);
+		this.app.use(createStoreMiddleware(this.getReducer));
 		this.pluginApi.app = this.app;
 	}
+
+	getReducer = () => (
+		combineReducers(this.reducers)
+	)
 
 	start() {
 		this.plugins.forEach(plugin => {
