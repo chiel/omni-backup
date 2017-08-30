@@ -59,7 +59,7 @@ export default withForm({
 			type: 'password',
 			label: 'Password',
 			name: 'password',
-			placeholder: 'e.g. correct-horse-battery-stable',
+			placeholder: 'e.g. correct-horse-battery-staple',
 			hint: 'Maybe something that is not "password123".',
 			validators: [
 				validators.required('Please enter your password.'),
