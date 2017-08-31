@@ -7,6 +7,7 @@
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {
+    "bootstrap": "yarn && lerna bootstrap",
     "clean": "lerna exec --parallel -- rimraf dist",
     "eslint": "eslint --ext=js --ext=jsx packages/*/src",
     "watch": "npm-run-all clean -p watch:*",
