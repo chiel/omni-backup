@@ -1,4 +1,4 @@
-import inputsPlugin from '@omni/inputs';
+import inputsPlugin from '@ocm/inputs';
 
 import inputTypes from './inputs';
 import routes from './routes';

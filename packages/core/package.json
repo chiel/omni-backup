@@ -1,13 +1,13 @@
 {
-  "name": "@omni/core",
-  "version": "0.0.0",
+  "name": "@ocm/core",
+  "version": "0.0.1",
   "main": "dist/OmniServer",
   "browser": "dist/OmniClient",
   "repository": "chielkunkels/omni",
   "author": "chielkunkels",
   "license": "MIT",
   "dependencies": {
-    "@omni/inputs": "0.0.0",
+    "@ocm/inputs": "0.0.1",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "isomorphic-fetch": "^2.2.1"

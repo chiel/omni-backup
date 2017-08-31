@@ -1,5 +1,5 @@
-import withForm from '@omni/core/dist/components/Form';
-import * as validators from '@omni/validators';
+import withForm from '@ocm/core/dist/components/Form';
+import * as validators from '@ocm/validators';
 import PT from 'prop-types';
 import React from 'react';
 

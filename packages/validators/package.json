@@ -1,6 +1,6 @@
 {
-  "name": "@omni/validators",
-  "version": "0.0.0",
+  "name": "@ocm/validators",
+  "version": "0.0.1",
   "description": "Validators for use with Omni forms.",
   "main": "dist",
   "repository": "chielkunkels/omni",

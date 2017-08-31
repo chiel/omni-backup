@@ -1,7 +1,7 @@
 {
   "name": "omni",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An extensible headless cms.",
   "repository": "chielkunkels/omni",
   "author": "chielkunkels",

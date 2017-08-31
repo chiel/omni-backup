@@ -1,4 +1,4 @@
-import Omni from '@omni/core';
+import Omni from '@ocm/core';
 
 import TestForm from './components/TestForm';
 

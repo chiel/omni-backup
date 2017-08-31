@@ -1,6 +1,6 @@
 {
-  "name": "@omni/inputs",
-  "version": "0.0.0",
+  "name": "@ocm/inputs",
+  "version": "0.0.1",
   "description": "Base inputs for use with Omni",
   "main": "dist",
   "repository": "chielkunkels/omni",

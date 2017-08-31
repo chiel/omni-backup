@@ -1,6 +1,6 @@
 {
-  "name": "@omni/boilerplate",
-  "version": "0.0.0",
+  "name": "@ocm/boilerplate",
+  "version": "0.0.1",
   "main": "dist",
   "repository": "chielkunkels/omni",
   "author": "chielkunkels",
@@ -13,8 +13,8 @@
     "watch:nodemon": "nodemon dist"
   },
   "dependencies": {
-    "@omni/core": "0.0.0",
-    "@omni/validators": "0.0.0"
+    "@ocm/core": "0.0.1",
+    "@ocm/validators": "0.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
