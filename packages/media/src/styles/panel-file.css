@@ -1,0 +1,26 @@
+.container {
+	width: 480px;
+	padding: 24px;
+}
+
+.details {
+	display: flex;
+	flex-wrap: wrap;
+	width: 400px;
+
+	dt,
+	dd {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	dt {
+		width: 35%;
+		font-weight: 400;
+	}
+
+	dd {
+		width: 65%;
+		margin: 0;
+	}
+}

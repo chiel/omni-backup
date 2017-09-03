@@ -1,0 +1,37 @@
+.scroll {
+	overflow: auto;
+	height: 480px;
+}
+
+.panels {
+	display: flex;
+	min-width: 100%;
+	height: 100%;
+}
+
+.panel {
+	overflow: hidden;
+	flex-grow: 0;
+	flex-shrink: 0;
+	min-width: 240px;
+	max-width: 480px;
+	height: 100%;
+	border-right: 1px solid #eee;
+}
+
+.error {
+	height: 100%;
+	padding: 48px 24px;
+	color: #d4341c;
+	font-weight: 400;
+	text-align: center;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 32px;
+	padding: 0 4px;
+	background: #eee;
+}

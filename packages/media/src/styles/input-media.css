@@ -1,0 +1,11 @@
+.input {
+	composes: input from '@ocm/inputs/dist/styles/input.css';
+}
+
+.icon {
+	composes: icon from '@ocm/inputs/dist/styles/input.css';
+}
+
+.iconBrowse {
+	background-image: svg-load('../images/icon-browse.svg', fill: #999);
+}

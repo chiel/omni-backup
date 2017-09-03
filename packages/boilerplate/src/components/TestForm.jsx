@@ -26,6 +26,7 @@ export class TestForm extends React.PureComponent {
 			<form onSubmit={this.handleSubmit}>
 				<fields.first_name />
 				<fields.last_name />
+				<fields.avatar />
 				<fields.password />
 				<fields.biography />
 				<fields.gender />
@@ -94,6 +95,12 @@ export default withForm({
 				{ label: 'Gaming', value: 'gaming' },
 				{ label: 'Surfing', value: 'surfing' },
 			],
+		},
+		avatar: {
+			type: 'media',
+			label: 'Avatar',
+			name: 'avatar',
+			hint: 'Choose an image...',
 		},
 	},
 })(TestForm);
