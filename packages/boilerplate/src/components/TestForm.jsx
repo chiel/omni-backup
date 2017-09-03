@@ -1,3 +1,4 @@
+import Button from '@ocm/core/dist/components/Button';
 import withForm from '@ocm/core/dist/components/Form';
 import * as validators from '@ocm/validators';
 import PT from 'prop-types';
@@ -29,7 +30,7 @@ export class TestForm extends React.PureComponent {
 				<fields.biography />
 				<fields.gender />
 				<fields.interests />
-				<button type="submit">submit</button>
+				<Button primary submit>submit</Button>
 			</form>
 		);
 	}

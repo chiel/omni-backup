@@ -1,0 +1,165 @@
+@value * as v from './vars.css';
+
+.button {
+	padding: 0 12px;
+	border: 0;
+	background: #fff;
+	font: inherit;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: 36px;
+	text-transform: uppercase;
+	transition:
+		background-color .15s ease-out,
+		box-shadow .15s ease-out,
+		opacity .15s ease-out,
+		padding .1s ease-out,
+		transform .05s ease-out;
+
+	&:hover {
+		background: #eee;
+	}
+
+	&:focus {
+		background: #eee;
+		box-shadow: 0 0 0 1px color(#eee l(+40%)), 0 0 6px 1px #ddd;
+		outline: 0;
+	}
+
+	&:active {
+		background: #eee;
+		box-shadow: inset 0 0 5px color(#eee l(-30%));
+	}
+
+	&[disabled] {
+		opacity: .5;
+		pointer-events: none;
+	}
+}
+
+.small {
+	padding: 0 9px;
+	font-size: 11px;
+	line-height: 24px;
+}
+
+.primary {
+	background: v.c-main;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-main l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-main l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-main l(+40%)), 0 0 6px 1px v.c-main;
+	}
+
+	&:active {
+		background: color(v.c-main l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-main l(-30%));
+	}
+}
+
+.blue {
+	background: v.c-blue;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-blue l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-blue l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-blue l(+40%)), 0 0 6px 1px v.c-blue;
+	}
+
+	&:active {
+		background: color(v.c-blue l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-blue l(-30%));
+	}
+}
+
+.green {
+	background: v.c-green;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-green l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-green l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-green l(+40%)), 0 0 6px 1px v.c-green;
+	}
+
+	&:active {
+		background: color(v.c-green l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-green l(-30%));
+	}
+}
+
+.orange {
+	background: v.c-orange;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-orange l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-orange l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-orange l(+40%)), 0 0 6px 1px v.c-orange;
+	}
+
+	&:active {
+		background: color(v.c-orange l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-orange l(-30%));
+	}
+}
+
+.red {
+	background: v.c-red;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-red l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-red l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-red l(+40%)), 0 0 6px 1px v.c-red;
+	}
+
+	&:active {
+		background: color(v.c-red l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-red l(-30%));
+	}
+}
+
+.yellow {
+	background: v.c-yellow;
+	color: #fff;
+	font-weight: 400;
+
+	&:hover {
+		background: color(v.c-yellow l(+10%));
+	}
+
+	&:focus {
+		background: color(v.c-yellow l(+10%));
+		box-shadow: 0 0 0 1px color(v.c-yellow l(+40%)), 0 0 6px 1px v.c-yellow;
+	}
+
+	&:active {
+		background: color(v.c-yellow l(+10%));
+		box-shadow: inset 0 0 5px color(v.c-yellow l(-30%));
+	}
+}
