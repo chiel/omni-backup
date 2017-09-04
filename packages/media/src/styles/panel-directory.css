@@ -2,13 +2,13 @@
 	width: 250px;
 }
 
-.file {
+.item {
 	overflow: hidden;
 	display: block;
 	width: 100%;
-	padding: 0 6px;
+	padding: 0 6px 0 32px;
 	border: 0;
-	background: transparent;
+	background: transparent no-repeat 6px center / 20px;
 	font: inherit;
 	font-size: 14px;
 	line-height: 24px;
@@ -19,4 +19,12 @@
 	&:focus {
 		outline: 0;
 	}
+}
+
+.directory {
+	background-image: svg-load('../images/icon-directory.svg', fill: #999);
+}
+
+.file {
+	background-image: svg-load('../images/icon-file.svg', fill: #999);
 }

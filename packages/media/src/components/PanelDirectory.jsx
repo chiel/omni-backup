@@ -27,15 +27,18 @@ export default class PanelDirectory extends React.PureComponent {
 
 		return (
 			<div className={css.container}>
-				{data.files.map(file => (
-					<button
-						key={file.name}
-						type="button"
-						className={css.file}
-						onClick={this.handleClick}
-						data-file={file.name}
-					>{file.name}</button>
-				))}
+				{data.files.map(file => {
+					const classes = [css.item, css[file.type]];
+					return (
+						<button
+							key={file.name}
+							type="button"
+							className={classes.join(' ')}
+							onClick={this.handleClick}
+							data-file={file.name}
+						>{file.name}</button>
+					);
+				})}
 			</div>
 		);
 	}
