@@ -40,6 +40,22 @@ export default function getFile(requestPath) {
 										}))
 								)),
 							))
+							.then(files => (
+								files.sort((a, b) => {
+									if (
+										(a.type === 'directory' && b.type === 'directory') ||
+										(a.type !== 'directory' && b.type !== 'directory')
+									) {
+										return a.name.localeCompare(b.name);
+									}
+
+									if (a.type === 'directory') {
+										return -1;
+									}
+
+									return 1;
+								})
+							))
 							.then(files => ({
 								files,
 								path: requestPath,
