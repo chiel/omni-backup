@@ -10,7 +10,7 @@ export default class PanelFile extends React.PureComponent {
 			created_at: PT.string,
 			name: PT.string,
 			path: PT.string,
-			size: PT.number,
+			size: PT.string,
 			updated_at: PT.string,
 		}).isRequired,
 	};
@@ -28,7 +28,7 @@ export default class PanelFile extends React.PureComponent {
 				<h2>{data.name}</h2>
 				<dl className={css.details}>
 					<dt>Size</dt>
-					<dd>{data.size} bytes</dd>
+					<dd>{data.size}</dd>
 
 					<dt>Path</dt>
 					<dd>{data.path}</dd>

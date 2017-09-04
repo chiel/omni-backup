@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
+import formatSize from './formatSize';
+
 import panelTypes from '../panels';
 
 const readdir = promisify(fs.readdir);
@@ -74,7 +76,7 @@ export default function getFile(requestPath) {
 						type,
 						name: path.basename(full),
 						path: requestPath,
-						size: stats.size,
+						size: formatSize(stats.size),
 						created_at: stats.birthtime,
 						updated_at: stats.ctime,
 					};

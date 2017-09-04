@@ -11,7 +11,7 @@ export default class PanelImage extends React.PureComponent {
 			created_at: PT.string,
 			name: PT.string,
 			path: PT.string,
-			size: PT.number,
+			size: PT.string,
 			updated_at: PT.string,
 		}).isRequired,
 	};
