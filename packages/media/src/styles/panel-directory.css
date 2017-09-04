@@ -1,3 +1,5 @@
+@value * as v from '@ocm/core/dist/styles/vars.css';
+
 .container {
 	width: 250px;
 }
@@ -14,11 +16,16 @@
 	line-height: 24px;
 	text-align: left;
 	text-overflow: ellipsis;
+	transition: background-color .2s ease-out;
 	white-space: nowrap;
 
 	&:focus {
 		outline: 0;
 	}
+}
+
+.selected {
+	background-color: color(v.c-blue a(10%));
 }
 
 .directory {
