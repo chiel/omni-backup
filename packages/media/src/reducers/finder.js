@@ -22,7 +22,7 @@ export default function finderReducer(state = initialState, action) {
 			panels: {
 				...state.panels,
 				[path]: {
-					...initialPanelState,
+					...(state.panels[path] || initialPanelState),
 				},
 			},
 			paths: [...paths, path],
