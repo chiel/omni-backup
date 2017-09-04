@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { promisify } from 'util';
 
+import panelTypes from '../panels';
+
 const readdir = promisify(fs.readdir);
 const stat = promisify(fs.stat);
 
@@ -45,10 +47,17 @@ export default function getFile(requestPath) {
 							}));
 					}
 
+					const types = Object.keys(panelTypes)
+						.filter(type => !!panelTypes[type].isType)
+						.map(type => ({ type, matcher: panelTypes[type].isType }));
+
+					const matched = types.find(({ matcher }) => matcher(requestPath));
+					const type = matched ? matched.type : 'file';
+
 					return {
+						type,
 						name: path.basename(full),
 						path: requestPath,
-						type: 'file',
 						size: stats.size,
 						created_at: stats.birthtime,
 						updated_at: stats.ctime,
