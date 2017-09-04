@@ -6,7 +6,6 @@
 .details {
 	display: flex;
 	flex-wrap: wrap;
-	width: 400px;
 
 	dt,
 	dd {
@@ -15,12 +14,12 @@
 	}
 
 	dt {
-		width: 35%;
+		width: 30%;
 		font-weight: 400;
 	}
 
 	dd {
-		width: 65%;
+		width: 70%;
 		margin: 0;
 	}
 }
