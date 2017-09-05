@@ -1,7 +1,14 @@
 @value * as v from '@ocm/core/dist/styles/vars.css';
 
 .container {
+	position: relative;
 	width: 250px;
+	height: 100%;
+}
+
+.fileList {
+	overflow: auto;
+	height: 100%;
 }
 
 .item {

@@ -1,6 +1,8 @@
 import PT from 'prop-types';
 import React from 'react';
 
+import DropzoneContainer from './DropzoneContainer';
+
 import css from '../styles/panel-directory.css';
 
 export default class PanelDirectory extends React.PureComponent {
@@ -37,19 +39,22 @@ export default class PanelDirectory extends React.PureComponent {
 
 		return (
 			<div className={css.container}>
-				{data.files.map(file => {
-					const classes = [css.item, css[file.type]];
-					if (selected === file.name) classes.push(css.selected);
-					return (
-						<button
-							key={file.name}
-							type="button"
-							className={classes.join(' ')}
-							onClick={this.handleClick}
-							data-file={file.name}
-						>{file.name}</button>
-					);
-				})}
+				<div className={css.fileList}>
+					{data.files.map(file => {
+						const classes = [css.item, css[file.type]];
+						if (selected === file.name) classes.push(css.selected);
+						return (
+							<button
+								key={file.name}
+								type="button"
+								className={classes.join(' ')}
+								onClick={this.handleClick}
+								data-file={file.name}
+							>{file.name}</button>
+						);
+					})}
+				</div>
+				<DropzoneContainer path={data.path} />
 			</div>
 		);
 	}
