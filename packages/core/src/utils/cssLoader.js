@@ -1,4 +1,4 @@
-import { normalize } from 'path';
+import { normalize, sep } from 'path';
 
 // eslint-disable-next-line import/no-unresolved
 import allStyles from '../styles.json';
@@ -11,9 +11,9 @@ Object.keys(allStyles).forEach(fullPath => {
 });
 
 require.extensions['.css'] = function cssLoader(m, fileName) {
-	const relativePath = fileName.replace(root, '');
+	// get relative path in unix form
+	const relativePath = fileName.replace(root, '').split(sep).join('/');
 	const styles = relativeStyles[relativePath];
-
 	// eslint-disable-next-line no-underscore-dangle
 	return m._compile(`module.exports = ${JSON.stringify(styles)}`, fileName);
 };
