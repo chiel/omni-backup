@@ -4,7 +4,7 @@
   "description": "Upload and manage media within Omni.",
   "browser": "dist/client",
   "main": "dist/server",
-  "repository": "chielkunkels/omni",
+  "repository": "chiel/omni",
   "author": "chielkunkels",
   "license": "MIT",
   "dependencies": {
