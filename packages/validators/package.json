@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Validators for use with Omni forms.",
   "main": "dist",
-  "repository": "chielkunkels/omni",
+  "repository": "chiel/omni",
   "author": "chielkunkels",
   "license": "MIT"
 }

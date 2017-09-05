@@ -2,7 +2,7 @@
   "name": "@ocm/boilerplate",
   "version": "0.0.1",
   "main": "dist",
-  "repository": "chielkunkels/omni",
+  "repository": "chiel/omni",
   "author": "chielkunkels",
   "license": "MIT",
   "scripts": {

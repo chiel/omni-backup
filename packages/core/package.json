@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "dist/OmniServer",
   "browser": "dist/OmniClient",
-  "repository": "chielkunkels/omni",
+  "repository": "chiel/omni",
   "author": "chielkunkels",
   "license": "MIT",
   "dependencies": {
