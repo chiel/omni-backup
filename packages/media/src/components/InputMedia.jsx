@@ -23,7 +23,7 @@ export class InputMedia extends React.PureComponent {
 		super();
 
 		this.state = {
-			showFinder: true,
+			showFinder: false,
 			value: defaultValue,
 		};
 	}
