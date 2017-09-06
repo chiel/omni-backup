@@ -35,7 +35,7 @@ export default function getFile(requestPath) {
 						return readdir(full)
 							.then(files => Promise.all(
 								files.map(file => (
-									stat(`${full}/${file}`)
+									stat(`${full}${path.sep}${file}`)
 										.then(stats => ({
 											name: file,
 											type: stats.isDirectory() ? 'directory' : 'file',
