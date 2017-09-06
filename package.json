@@ -11,8 +11,9 @@
     "build": "npm-run-all clean -p build:*",
     "build:scripts": "lerna exec --parallel -- babel -d dist src",
     "clean": "lerna exec --parallel -- rimraf dist",
-    "eslint": "eslint --ext=js --ext=jsx packages/*/src",
-    "stylelint": "stylelint packages/*/src/styles/*.css",
+    "lint": "npm-run-all -p lint:*",
+    "lint:eslint": "eslint --ext=js --ext=jsx packages/*/src",
+    "lint:stylelint": "stylelint packages/*/src/styles/*.css",
     "watch": "npm-run-all clean -p watch:*",
     "watch:scripts": "lerna exec --parallel -- babel -w -D -d dist src"
   },
