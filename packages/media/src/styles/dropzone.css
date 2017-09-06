@@ -5,9 +5,9 @@
 	justify-content: center;
 	position: absolute;
 	top: 8px;
-	left: 8px;
 	right: 8px;
 	bottom: 8px;
+	left: 8px;
 	border: 3px dashed #ccc;
 	background: color(#fff a(85%));
 	text-align: center;
