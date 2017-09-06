@@ -13,6 +13,23 @@
 		font: inherit;
 		transition: padding .2s ease-out;
 
+		&::-webkit-input-placeholder {
+			color: #ddd;
+		}
+
+		&::-moz-placeholder {
+			color: #ddd;
+			opacity: 1;
+		}
+
+		&:-ms-input-placeholder {
+			color: #ddd;
+		}
+
+		&:-moz-placeholder {
+			color: #ddd;
+		}
+
 		&:focus {
 			color: #444;
 			outline: 0;

@@ -1,3 +1,4 @@
+import Button from '@ocm/core/dist/components/Button';
 import withForm from '@ocm/core/dist/components/Form';
 import * as validators from '@ocm/validators';
 import PT from 'prop-types';
@@ -25,11 +26,12 @@ export class TestForm extends React.PureComponent {
 			<form onSubmit={this.handleSubmit}>
 				<fields.first_name />
 				<fields.last_name />
+				<fields.avatar />
 				<fields.password />
 				<fields.biography />
 				<fields.gender />
 				<fields.interests />
-				<button type="submit">submit</button>
+				<Button primary submit>submit</Button>
 			</form>
 		);
 	}
@@ -93,6 +95,12 @@ export default withForm({
 				{ label: 'Gaming', value: 'gaming' },
 				{ label: 'Surfing', value: 'surfing' },
 			],
+		},
+		avatar: {
+			type: 'media',
+			label: 'Avatar',
+			name: 'avatar',
+			hint: 'Choose an image...',
 		},
 	},
 })(TestForm);

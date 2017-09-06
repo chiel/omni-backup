@@ -15,8 +15,8 @@ rules:
   import/order:
   - 2
   - groups:
-    - builtin
-    - external
+    - - builtin
+      - external
     - sibling
     - parent
     - index
