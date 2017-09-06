@@ -8,6 +8,8 @@
   "license": "MIT",
   "scripts": {
     "bootstrap": "yarn && lerna bootstrap",
+    "build": "npm-run-all clean -p build:*",
+    "build:scripts": "lerna exec --parallel -- babel -d dist src",
     "clean": "lerna exec --parallel -- rimraf dist",
     "eslint": "eslint --ext=js --ext=jsx packages/*/src",
     "watch": "npm-run-all clean -p watch:*",
