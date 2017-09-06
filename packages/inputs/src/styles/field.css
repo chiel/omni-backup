@@ -13,16 +13,6 @@
 		background: #444;
 		transition: width .2s ease-out;
 	}
-
-	&.focussed {
-		.label {
-			color: #444;
-		}
-
-		&::after {
-			width: 100%;
-		}
-	}
 }
 
 .label {
@@ -49,4 +39,14 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: 24px;
+}
+
+.focussed {
+	.label {
+		color: #444;
+	}
+
+	&::after {
+		width: 100%;
+	}
 }

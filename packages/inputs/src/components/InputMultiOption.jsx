@@ -3,7 +3,7 @@ import React from 'react';
 
 import withField from './Field';
 
-import css from '../styles/input.css';
+import css from '../styles/input-options.css';
 
 export class InputMultiOption extends React.PureComponent {
 	static propTypes = {

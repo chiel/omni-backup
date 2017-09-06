@@ -1,0 +1,28 @@
+.input {
+	composes: input from './input.css';
+
+	pre {
+		position: relative;
+		z-index: 1;
+		visibility: hidden;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		min-height: 36px;
+		border: 0;
+		color: #aaa;
+		font: inherit;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+
+	> textarea {
+		resize: none;
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

@@ -3,7 +3,7 @@ import React from 'react';
 
 import withField from './Field';
 
-import css from '../styles/input.css';
+import css from '../styles/input-textarea.css';
 
 export class InputTextarea extends React.PureComponent {
 	static propTypes = {
@@ -36,7 +36,7 @@ export class InputTextarea extends React.PureComponent {
 		delete props.defaultValue;
 
 		return (
-			<div className={`${css.input} ${css.inputTextarea}`}>
+			<div className={css.input}>
 				<pre><span>{this.state.value}</span><br /></pre>
 				<textarea
 					{...props}
