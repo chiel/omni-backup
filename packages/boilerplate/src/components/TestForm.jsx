@@ -30,6 +30,7 @@ export class TestForm extends React.PureComponent {
 				<fields.password />
 				<fields.biography />
 				<fields.gender />
+				<fields.human />
 				<fields.interests />
 				<Button primary submit>submit</Button>
 			</form>
@@ -85,6 +86,12 @@ export default withForm({
 				{ label: 'Female', value: 'female' },
 				{ label: 'Other', value: 'other' },
 			],
+		},
+		human: {
+			type: 'boolean',
+			label: 'Human',
+			name: 'human',
+			hint: 'Robots can\'t toggle sliders.',
 		},
 		interests: {
 			type: 'multi_option',
