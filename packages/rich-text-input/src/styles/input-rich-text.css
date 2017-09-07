@@ -1,0 +1,5 @@
+.input {
+	composes: input from '@ocm/inputs/dist/styles/input.css';
+	flex-direction: column;
+	min-height: 37px;
+}

@@ -28,6 +28,7 @@ export class TestForm extends React.PureComponent {
 				<fields.last_name />
 				<fields.avatar />
 				<fields.password />
+				<fields.rich_text />
 				<fields.biography />
 				<fields.gender />
 				<fields.human />
@@ -76,6 +77,11 @@ export default withForm({
 			validators: [
 				validators.required('Please tell us about yourself.'),
 			],
+		},
+		rich_text: {
+			type: 'rich_text',
+			label: 'Rich text test',
+			name: 'rich_text',
 		},
 		gender: {
 			type: 'single_option',

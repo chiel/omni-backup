@@ -1,0 +1,15 @@
+{
+  "name": "@ocm/rich-text-input",
+  "version": "0.0.1",
+  "description": "A rich text input based on draft.js for Omni.",
+  "main": "dist",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "license": "MIT",
+  "dependencies": {
+    "@ocm/inputs": "0.0.1",
+    "draft-js": "^0.10.1",
+    "draft-js-export-markdown": "^1.1.0",
+    "draft-js-import-markdown": "^1.1.0"
+  }
+}
