@@ -11,7 +11,9 @@
     "build": "npm-run-all clean -p build:*",
     "build:scripts": "lerna exec --parallel -- babel -d dist src",
     "clean": "lerna exec --parallel -- rimraf dist",
-    "eslint": "eslint --ext=js --ext=jsx packages/*/src",
+    "lint": "npm-run-all -p lint:*",
+    "lint:eslint": "eslint --ext=js --ext=jsx packages/*/src",
+    "lint:stylelint": "stylelint packages/*/src/styles/*.css",
     "watch": "npm-run-all clean -p watch:*",
     "watch:scripts": "lerna exec --parallel -- babel -w -D -d dist src"
   },
@@ -40,6 +42,8 @@
     "eslint-plugin-react": "^7.1.0",
     "lerna": "^2.0.0",
     "npm-run-all": "^4.0.2",
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.1",
+    "stylelint": "^8.1.1",
+    "stylelint-order": "^0.6.0"
   }
 }

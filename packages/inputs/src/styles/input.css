@@ -1,6 +1,6 @@
 .input {
-	position: relative;
 	display: flex;
+	position: relative;
 	border-bottom: 1px solid #ccc;
 	line-height: inherit;
 

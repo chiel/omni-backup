@@ -19,4 +19,4 @@ jobs:
         paths:
         - node_modules
     - run: yarn build
-    - run: yarn eslint
+    - run: yarn lint
