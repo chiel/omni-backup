@@ -3,7 +3,7 @@ import React from 'react';
 
 import withField from './Field';
 
-import css from '../styles/input.css';
+import css from '../styles/input-toggle.css';
 
 export class InputBoolean extends React.PureComponent {
 	static propTypes = {
