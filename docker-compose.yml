@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:8.0.2
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=omni
+    ports:
+    - 3306:3306
+    volumes:
+    - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
