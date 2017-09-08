@@ -5,6 +5,8 @@ import { stateFromMarkdown } from 'draft-js-import-markdown';
 import PT from 'prop-types';
 import React from 'react';
 
+import RichTextToolbar from './RichTextToolbar';
+
 import css from '../styles/input-rich-text.css';
 
 export class InputRichText extends React.PureComponent {
@@ -60,8 +62,13 @@ export class InputRichText extends React.PureComponent {
 		const { onBlur, onFocus } = this.props;
 		const { active, editorState } = this.state;
 
-		return (
-			<div className={css.input}>
+		return [
+			<RichTextToolbar
+				key="toolbar"
+				editorState={editorState}
+				onChange={this.handleChange}
+			/>,
+			<div key="editor" className={css.input}>
 				{active && (
 					<Editor
 						editorState={editorState}
@@ -71,8 +78,8 @@ export class InputRichText extends React.PureComponent {
 						onFocus={onFocus}
 					/>
 				)}
-			</div>
-		);
+			</div>,
+		];
 	}
 }
 

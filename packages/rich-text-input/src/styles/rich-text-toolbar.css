@@ -1,0 +1,21 @@
+.container {
+	margin-bottom: 8px;
+}
+
+.button {
+	width: 32px;
+	height: 32px;
+	border: 0;
+	background: transparent no-repeat center / 24px;
+	text-indent: -999em;
+	transition: background-color .15s ease-out;
+}
+
+.buttonBold {
+	composes: button;
+	background-image: svg-load('../images/icon-format-bold.svg', fill: #999);
+}
+
+.active {
+	background-color: #eee;
+}
