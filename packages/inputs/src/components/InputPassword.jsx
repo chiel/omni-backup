@@ -29,7 +29,8 @@ export class InputText extends React.PureComponent {
 		this.props.onChange(ev);
 	}
 
-	handleTogglePassword = () => {
+	handleTogglePassword = ev => {
+		ev.preventDefault();
 		this.input.focus();
 		this.setState({
 			showPassword: !this.state.showPassword,
@@ -56,7 +57,7 @@ export class InputText extends React.PureComponent {
 				<button
 					type="button"
 					className={buttonClasses.join(' ')}
-					onClick={this.handleTogglePassword}
+					onMouseDown={this.handleTogglePassword}
 					tabIndex={-1}
 				>{showPassword ? 'Hide' : 'Show'} password</button>
 			</div>
