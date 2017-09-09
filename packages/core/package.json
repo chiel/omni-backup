@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@ocm/inputs": "0.0.1",
+    "@ocm/mysql": "0.0.1",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "isomorphic-fetch": "^2.2.1"
