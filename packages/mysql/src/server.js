@@ -3,6 +3,7 @@ import mysql from 'mysql';
 import createDelete from './createDelete';
 import createInsert from './createInsert';
 import createQuery from './createQuery';
+import createSelect from './createSelect';
 import createUpdate from './createUpdate';
 
 export default function mysqlPlugin(omni) {
@@ -17,6 +18,7 @@ export default function mysqlPlugin(omni) {
 		delete: createDelete(pool),
 		insert: createInsert(pool),
 		query: createQuery(pool),
+		select: createSelect(pool),
 		update: createUpdate(pool),
 	};
 }
