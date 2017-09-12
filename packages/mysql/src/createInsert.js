@@ -1,3 +1,5 @@
+import createSelect from './createSelect';
+
 export default function createInsert(pool) {
 	return (table, data) => new Promise((resolve, reject) => {
 		pool.getConnection((err, conn) => {
@@ -12,7 +14,9 @@ export default function createInsert(pool) {
 					return reject(err);
 				}
 
-				resolve(result);
+				createSelect(pool)('user', result.insertId)
+					.then(resolve)
+					.catch(reject);
 			});
 		});
 	});
