@@ -1,0 +1,9 @@
+{
+  "name": "@ocm/auth",
+  "version": "0.0.1",
+  "description": "Base authentication plugin for Omni.",
+  "main": "dist",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "license": "MIT"
+}
