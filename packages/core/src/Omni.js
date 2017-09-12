@@ -8,13 +8,13 @@ export default class Omni {
 	static defaultConfig = {
 		apiPort: 12830,
 		appPort: 12831,
-	}
+	};
 
-	pluginApi = { inputTypes }
+	pluginApi = { inputTypes };
 
 	plugins = [
 		inputsPlugin,
-	]
+	];
 
 	constructor(config = {}) {
 		this.config = {
