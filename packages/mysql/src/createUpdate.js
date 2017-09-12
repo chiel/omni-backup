@@ -1,3 +1,5 @@
+import createSelect from './createSelect';
+
 export default function createUpdate(pool) {
 	return (table, id, data) => new Promise((resolve, reject) => {
 		pool.getConnection((err, conn) => {
@@ -18,13 +20,15 @@ export default function createUpdate(pool) {
 				`WHERE id = ${id}`,
 			].join(' ');
 
-			conn.query(query, values, (err, result) => {
+			conn.query(query, values, err => {
 				conn.release();
 				if (err) {
 					return reject(err);
 				}
 
-				resolve(result);
+				createSelect(pool)('user', id)
+					.then(resolve)
+					.catch(reject);
 			});
 		});
 	});
