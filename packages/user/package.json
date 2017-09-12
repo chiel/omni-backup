@@ -1,0 +1,10 @@
+{
+  "name": "@ocm/user",
+  "version": "0.0.1",
+  "description": "User plugin for Omni.",
+  "main": "dist/server",
+  "browser": "dist/client",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "license": "MIT"
+}
