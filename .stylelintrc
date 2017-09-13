@@ -4,7 +4,7 @@
 	],
 	"rules": {
 		"at-rule-empty-line-before": ["always", {
-			"except": "after-same-name"
+			"except": "blockless-after-blockless"
 		}],
 		"at-rule-name-case": "lower",
 		"at-rule-name-newline-after": "always-multi-line",
@@ -226,7 +226,7 @@
 		"string-quotes": "single",
 		"unit-case": "lower",
 		"unit-no-unknown": true,
-		"unit-whitelist": ["%", "deg", "em", "px", "s"],
+		"unit-whitelist": ["%", "deg", "em", "px", "s", "vh"],
 		"value-keyword-case": "lower",
 		"value-list-comma-newline-after": "always-multi-line",
 		"value-list-comma-newline-before": "never-multi-line",
