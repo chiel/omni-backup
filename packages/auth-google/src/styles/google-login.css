@@ -1,0 +1,17 @@
+.container {
+	display: block;
+	width: 160px;
+	color: #444;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+
+	&::before {
+		content: '';
+		display: block;
+		width: 96px;
+		height: 96px;
+		margin: 0 auto 8px;
+		background: svg-load(../images/icon-google.svg) no-repeat center / contain;
+	}
+}

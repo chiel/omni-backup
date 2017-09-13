@@ -13,6 +13,7 @@
     "watch:nodemon": "nodemon dist"
   },
   "dependencies": {
+    "@ocm/auth-google": "0.0.1",
     "@ocm/core": "0.0.1",
     "@ocm/media": "0.0.1",
     "@ocm/validators": "0.0.1"
