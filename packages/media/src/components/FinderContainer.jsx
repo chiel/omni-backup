@@ -36,6 +36,10 @@ export class FinderContainer extends React.PureComponent {
 		this.props.onSelect(panels[panels.length - 1].path);
 	}
 
+	handleDelete = () => {
+
+	}
+
 	render() {
 		const { panels } = this.props;
 		return (

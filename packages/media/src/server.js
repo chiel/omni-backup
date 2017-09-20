@@ -8,12 +8,12 @@ import panelTypes from './panels';
 import finderReducer from './reducers/finder';
 import getFile from './utils/getFile';
 
-const uploads = resolve(process.env.MEDIA_UPLOADS_DIR);
+const uploadDirectory = resolve(process.env.MEDIA_UPLOADS_DIR);
 
 const uploadStorage = multer.diskStorage({
 	destination: (req, file, cb) => {
 		const { path } = req.query;
-		cb(null, uploads + path);
+		cb(null, uploadDirectory + path);
 	},
 	filename: (req, file, cb) => {
 		cb(null, file.fieldname);
@@ -23,7 +23,7 @@ const uploadStorage = multer.diskStorage({
 const uploadMiddleware = multer({ storage: uploadStorage });
 
 export default function mediaPlugin(omni) {
-	mkdirp.sync(uploads);
+	mkdirp.sync(uploadDirectory);
 
 	omni.api.get('/media', (req, res, next) => {
 		const { path } = req.query;
@@ -43,7 +43,7 @@ export default function mediaPlugin(omni) {
 			.catch(next);
 	});
 
-	omni.app.use('/uploads', serveStatic(uploads));
+	omni.app.use('/uploads', serveStatic(uploadDirectory));
 
 	omni.inputTypes.media = InputMedia;
 	omni.reducers.finder = finderReducer;

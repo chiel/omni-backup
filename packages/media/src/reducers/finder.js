@@ -1,4 +1,4 @@
-import { addPanel, uploadFiles } from '../actions/finder';
+import { addPanel, uploadFiles, deleteFiles } from '../actions/finder';
 
 const initialState = {
 	panels: {},
@@ -44,7 +44,7 @@ export default function finderReducer(state = initialState, action) {
 		};
 	}
 
-	if (action.type === uploadFiles.success) {
+	if (action.type === uploadFiles.success || action.type === deleteFiles.success) {
 		const path = action.args[0];
 		return {
 			...state,
