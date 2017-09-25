@@ -1,11 +1,11 @@
 export default function createQuery(pool) {
-	return query => new Promise((resolve, reject) => {
+	return (query, args) => new Promise((resolve, reject) => {
 		pool.getConnection((err, conn) => {
 			if (err) {
 				return reject(err);
 			}
 
-			conn.query(query, (err, result) => {
+			conn.query(query, args, (err, result) => {
 				conn.release();
 				if (err) {
 					return reject(err);
