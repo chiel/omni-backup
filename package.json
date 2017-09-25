@@ -9,7 +9,7 @@
   "scripts": {
     "bootstrap": "yarn && lerna bootstrap",
     "build": "npm-run-all clean -p build:*",
-    "build:scripts": "lerna exec --parallel -- babel -d dist src",
+    "build:scripts": "lerna exec --parallel -- babel -D -d dist src",
     "clean": "lerna exec --parallel -- rimraf dist",
     "lint": "npm-run-all -p lint:*",
     "lint:eslint": "eslint --ext=js --ext=jsx packages/*/src",
