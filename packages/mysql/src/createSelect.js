@@ -6,13 +6,13 @@ export default function createSelect(pool) {
 			}
 
 			const query = `SELECT * FROM ${table} WHERE id = ?`;
-			conn.query(query, [id], (err, result) => {
+			conn.query(query, [id], (err, [row]) => {
 				conn.release();
 				if (err) {
 					return reject(err);
 				}
 
-				resolve(result);
+				resolve({ ...row });
 			});
 		});
 	});
