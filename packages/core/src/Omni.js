@@ -5,7 +5,6 @@ import userPlugin from '@ocm/user';
 
 import inputTypes from './inputs';
 import routes from './routes';
-import sessionReducer from './reducers/session';
 
 export default class Omni {
 	static defaultConfig = {
@@ -28,7 +27,7 @@ export default class Omni {
 			...config,
 		};
 
-		this.reducers = { session: sessionReducer };
+		this.reducers = {};
 		this.routes = [...routes];
 		this.pluginApi.addRoute = this.addRoute;
 		this.pluginApi.reducers = this.reducers;

@@ -3,6 +3,7 @@ import React from 'react';
 
 import Login from './components/Login';
 import providers from './providers';
+import sessionReducer from './reducers/session';
 
 const salt = process.env.AUTH_TOKEN_SALT;
 
@@ -11,6 +12,8 @@ export default function authPlugin(omni) {
 		path: '/login',
 		component: () => <Login providers={providers} />,
 	});
+
+	omni.reducers.session = sessionReducer;
 
 	const addProvider = (name, Component) => {
 		providers.push({ Component, name });
