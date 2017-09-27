@@ -19,9 +19,9 @@ export default function authPlugin(omni) {
 		providers.push({ Component, type });
 	};
 
-	const createToken = (subject, secret, payload = {}) => (
+	const createToken = (type, subject, secret) => (
 		new Promise((resolve, reject) => {
-			jwt.sign(payload, salt + secret, { subject: `${subject}` }, (err, token) => {
+			jwt.sign({ type }, salt + secret, { subject: `${subject}` }, (err, token) => {
 				if (err) return reject(err);
 				resolve(token);
 			});

@@ -165,7 +165,7 @@ export function createCallbackHandler(omni) {
 							loginUser(omni.mysql, googleUser)
 					))
 					.then(user => (
-						omni.auth.createToken(user.id, googleUser.id)
+						omni.auth.createToken('google', user.id, googleUser.id)
 					))
 			))
 			.then(token => {
