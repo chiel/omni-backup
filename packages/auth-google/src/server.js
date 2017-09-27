@@ -19,7 +19,14 @@ export default function authGooglePlugin(omni) {
 			}
 		});
 
-	omni.auth.addProvider('Google', GoogleLogin);
+	omni.auth.addProvider('google', GoogleLogin, userId => new Promise((resolve, reject) => {
+		omni.mysql.query('SELECT google_id FROM auth_google WHERE user_id = ?', [userId])
+			.then(([row]) => {
+				if (!row) throw new Error(`Can't find user with id ${userId}`);
+				resolve(row.google_id);
+			})
+			.catch(reject);
+	}));
 
 	omni.app.get('/auth/google', redirectHandler);
 	omni.app.get('/auth/google/callback', createCallbackHandler(omni));

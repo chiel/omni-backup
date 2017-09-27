@@ -15,8 +15,8 @@ export default function authPlugin(omni) {
 
 	omni.reducers.session = sessionReducer;
 
-	const addProvider = (type, Component) => {
-		providers.push({ Component, type });
+	const addProvider = (type, Component, getSecret) => {
+		providers.push({ Component, getSecret, type });
 	};
 
 	const createToken = (type, subject, secret) => (
