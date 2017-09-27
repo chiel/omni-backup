@@ -22,6 +22,7 @@ export default class OmniServer extends Omni {
 
 		this.app = express();
 		this.app.disable('x-powered-by');
+		this.app.use(express.static(`${__dirname}/public`));
 		this.app.use(createStoreMiddleware(this.getReducer));
 		this.pluginApi.app = this.app;
 	}
@@ -42,7 +43,6 @@ export default class OmniServer extends Omni {
 			console.info(`Omni api listening on port ${this.config.apiPort}`);
 		});
 
-		this.app.use(express.static(`${__dirname}/public`));
 		this.app.get('*', createHandleRequest(this.routes));
 		this.app.use(notFoundMiddleware);
 		this.app.use(handleErrorMiddleware);
