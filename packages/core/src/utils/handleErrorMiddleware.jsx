@@ -15,6 +15,7 @@ export default function handleErrorMiddleware(err, req, res, next) {
 		<Root>
 			<ErrorMessage error={err} />
 		</Root>,
+		req.store.getState(),
 	);
 
 	res.status(err.status || 500).send(markup);
