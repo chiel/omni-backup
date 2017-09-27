@@ -7,7 +7,7 @@ export default class Login extends React.PureComponent {
 	static propTypes = {
 		providers: PT.arrayOf(PT.shape({
 			Component: PT.func.isRequired,
-			name: PT.string.isRequired,
+			type: PT.string.isRequired,
 		})).isRequired,
 	};
 
@@ -22,8 +22,8 @@ export default class Login extends React.PureComponent {
 						Looks like you&apos;re locked out!
 					</p>
 				)}
-				{providers.map(({ Component, name }) => (
-					<Component key={name} />
+				{providers.map(({ Component, type }) => (
+					<Component key={type} />
 				))}
 			</div>
 		);
