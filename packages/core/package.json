@@ -11,6 +11,7 @@
     "@ocm/inputs": "0.0.1",
     "@ocm/mysql": "0.0.1",
     "@ocm/user": "0.0.1",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.15.4",
     "isomorphic-fetch": "^2.2.1"

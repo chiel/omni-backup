@@ -1,5 +1,7 @@
 import './utils/cssLoader';
 
+import createEnsureAuthMiddleware from '@ocm/auth/dist/createEnsureAuthMiddleware';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import { combineReducers } from 'redux';
@@ -24,6 +26,8 @@ export default class OmniServer extends Omni {
 		this.app.disable('x-powered-by');
 		this.app.use(express.static(`${__dirname}/public`));
 		this.app.use(createStoreMiddleware(this.getReducer));
+		this.app.use(cookieParser());
+		this.app.use(createEnsureAuthMiddleware(this.pluginApi));
 		this.pluginApi.app = this.app;
 	}
 
