@@ -1,0 +1,13 @@
+{
+  "name": "@ocm/auth-google",
+  "version": "0.0.1",
+  "description": "Google authentication plugin for Omni.",
+  "main": "dist/server",
+  "browser": "dist/client",
+  "repository": "chiel/omni",
+  "author": "chielkunkels",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  }
+}

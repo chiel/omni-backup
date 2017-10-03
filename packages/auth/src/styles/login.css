@@ -1,0 +1,36 @@
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-16px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.login {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	animation:
+		fadeIn .5s .25s ease-out both,
+		slideDown .5s .25s ease-out both;
+	transform: translateZ(0);
+}
+
+.error {
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+}

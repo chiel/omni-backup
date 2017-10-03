@@ -15,7 +15,7 @@ export default function createInsert(pool) {
 				}
 
 				createSelect(pool)('user', result.insertId)
-					.then(resolve)
+					.then(rows => resolve({ ...rows[0] }))
 					.catch(reject);
 			});
 		});
