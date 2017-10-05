@@ -2,6 +2,7 @@ import React from 'react';
 
 import renderDocument from './renderDocument';
 
+import App from '../components/App';
 import ErrorMessage from '../components/ErrorMessage';
 import Root from '../components/Root';
 
@@ -13,7 +14,9 @@ export default function handleErrorMiddleware(err, req, res, next) {
 
 	const markup = renderDocument(
 		<Root>
-			<ErrorMessage error={err} />
+			<App>
+				<ErrorMessage error={err} />
+			</App>
 		</Root>,
 		req.store.getState(),
 	);

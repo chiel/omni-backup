@@ -29,11 +29,16 @@ export default class Omni {
 
 		this.reducers = {};
 		this.routes = [...routes];
+		this.pluginApi.addPlainRoute = this.addPlainRoute;
 		this.pluginApi.addRoute = this.addRoute;
 		this.pluginApi.reducers = this.reducers;
 	}
 
 	addRoute = route => {
+		this.routes[0].childRoutes[0].childRoutes.push(route);
+	}
+
+	addPlainRoute = route => {
 		this.routes[0].childRoutes.push(route);
 	}
 
