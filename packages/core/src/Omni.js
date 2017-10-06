@@ -4,6 +4,7 @@ import mysqlPlugin from '@ocm/mysql';
 import userPlugin from '@ocm/user';
 
 import inputTypes from './inputs';
+import menuItems from './menuItems';
 import routes from './routes';
 
 export default class Omni {
@@ -29,9 +30,14 @@ export default class Omni {
 
 		this.reducers = {};
 		this.routes = [...routes];
+		this.pluginApi.addMenuItem = this.addMenuItem;
 		this.pluginApi.addPlainRoute = this.addPlainRoute;
 		this.pluginApi.addRoute = this.addRoute;
 		this.pluginApi.reducers = this.reducers;
+	}
+
+	addMenuItem = (label, link, icon) => {
+		menuItems.push({ icon, label, link });
 	}
 
 	addRoute = route => {

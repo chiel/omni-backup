@@ -11,3 +11,8 @@
 	width: 80px;
 	background: color(v.c-main shade(20%));
 }
+
+.topNav {
+	display: flex;
+	flex-direction: column;
+}

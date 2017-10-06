@@ -2,7 +2,7 @@
 const CSSPlugin = require('modular-css-webpack/plugin');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.jsx',
 	output: {
 		filename: '../core/dist/public/js/omni.js',
 	},
