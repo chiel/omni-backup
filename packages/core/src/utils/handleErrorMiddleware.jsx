@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import renderDocument from './renderDocument';
 
@@ -13,11 +14,13 @@ export default function handleErrorMiddleware(err, req, res, next) {
 	}
 
 	const markup = renderDocument(
-		<Root>
-			<App>
-				<ErrorMessage error={err} />
-			</App>
-		</Root>,
+		<Provider store={req.store}>
+			<Root>
+				<App>
+					<ErrorMessage error={err} />
+				</App>
+			</Root>
+		</Provider>,
 		req.store.getState(),
 	);
 
