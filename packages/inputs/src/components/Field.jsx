@@ -10,8 +10,8 @@ export default WrappedInput => hoistStatics(class Field extends React.PureCompon
 		hint: PT.string,
 		id: PT.string,
 		label: PT.string,
-		onBlur: PT.func.isRequired,
-		onFocus: PT.func.isRequired,
+		onBlur: PT.func,
+		onFocus: PT.func,
 	};
 
 	static defaultProps = {
@@ -48,7 +48,7 @@ export default WrappedInput => hoistStatics(class Field extends React.PureCompon
 		const classes = [css.field];
 		if (focussed) classes.push(css.focussed);
 
-		let id = props.id;
+		let { id } = props;
 		if (!id && props.name) {
 			id = `field-${props.name}`;
 			props.id = id;

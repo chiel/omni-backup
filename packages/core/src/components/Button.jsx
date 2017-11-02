@@ -42,7 +42,9 @@ export default class Button extends React.PureComponent {
 				{...props}
 				className={classes.join(' ')}
 				type={submit ? 'submit' : 'button'}
-			>{children}</button>
+			>
+				{children}
+			</button>
 		);
 	}
 }

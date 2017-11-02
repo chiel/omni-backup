@@ -65,7 +65,9 @@ export class InputMultiOption extends React.PureComponent {
 							/>
 							<label
 								htmlFor={`${name}_${i}`}
-							>{option.label}</label>
+							>
+								{option.label}
+							</label>
 						</div>
 					))}
 				</fieldset>

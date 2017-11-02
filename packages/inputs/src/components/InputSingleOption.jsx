@@ -53,7 +53,9 @@ export class InputSingleOption extends React.PureComponent {
 							/>
 							<label
 								htmlFor={`${name}_${i}`}
-							>{option.label}</label>
+							>
+								{option.label}
+							</label>
 						</div>
 					))}
 					<button
@@ -61,7 +63,9 @@ export class InputSingleOption extends React.PureComponent {
 						className={css.clear}
 						onClick={this.handleClear}
 						tabIndex={-1}
-					>Clear selection</button>
+					>
+						Clear selection
+					</button>
 				</fieldset>
 			</div>
 		);

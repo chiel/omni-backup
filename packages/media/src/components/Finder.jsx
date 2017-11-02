@@ -69,7 +69,9 @@ export default class Finder extends React.PureComponent {
 						onClick={onSelect}
 						primary
 						small
-					>Select</Button>
+					>
+						Select
+					</Button>
 				</footer>
 			</div>
 		);

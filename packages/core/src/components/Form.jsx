@@ -87,7 +87,7 @@ export default config => WrappedForm => hoistStatics(class Form extends React.Pu
 	}
 
 	generateFields() {
-		const values = this.state.values;
+		const { values } = this.state;
 
 		const fields = {};
 		Object.keys(config.fields).forEach(fieldName => {
