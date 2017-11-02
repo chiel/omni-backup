@@ -69,7 +69,9 @@ export class InputMedia extends React.PureComponent {
 					className={`${css.icon} ${css.iconBrowse}`}
 					onClick={this.handleBrowse}
 					tabIndex={-1}
-				>Browse</button>
+				>
+					Browse
+				</button>
 				{showFinder && (
 					<PlainModal
 						onClose={this.handleBrowseEnd}

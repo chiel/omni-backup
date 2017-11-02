@@ -7,8 +7,8 @@ import css from '../styles/input.css';
 
 export class InputText extends React.PureComponent {
 	static propTypes = {
-		onChange: PT.func.isRequired,
-		onUpdate: PT.func.isRequired,
+		onChange: PT.func,
+		onUpdate: PT.func,
 	};
 
 	static defaultProps = {
@@ -59,7 +59,9 @@ export class InputText extends React.PureComponent {
 					className={buttonClasses.join(' ')}
 					onMouseDown={this.handleTogglePassword}
 					tabIndex={-1}
-				>{showPassword ? 'Hide' : 'Show'} password</button>
+				>
+					{showPassword ? 'Hide' : 'Show'} password
+				</button>
 			</div>
 		);
 	}

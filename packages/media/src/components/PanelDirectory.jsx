@@ -50,7 +50,9 @@ export default class PanelDirectory extends React.PureComponent {
 								className={classes.join(' ')}
 								onClick={this.handleClick}
 								data-file={file.name}
-							>{file.name}</button>
+							>
+								{file.name}
+							</button>
 						);
 					})}
 				</div>

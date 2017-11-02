@@ -30,7 +30,9 @@ export default class Modal extends React.PureComponent {
 						type="button"
 						className={css.close}
 						onClick={onClose}
-					>Close</button>
+					>
+						Close
+					</button>
 				</header>
 				<div className={css.body}>
 					{children}
