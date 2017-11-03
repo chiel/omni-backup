@@ -8,7 +8,7 @@ import sessionReducer from './reducers/session';
 const salt = process.env.AUTH_TOKEN_SALT;
 
 export default function authPlugin(omni) {
-	omni.addRoute({
+	omni.addPlainRoute({
 		path: '/login',
 		component: () => <Login providers={providers} />,
 	});

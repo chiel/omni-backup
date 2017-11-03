@@ -1,8 +1,14 @@
+import App from './components/App';
 import Root from './components/Root';
 
 export default [
 	{
 		component: Root,
-		childRoutes: [],
+		childRoutes: [
+			{
+				component: App,
+				childRoutes: [],
+			},
+		],
 	},
 ];

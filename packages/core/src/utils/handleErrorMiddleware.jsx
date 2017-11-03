@@ -1,7 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 
 import renderDocument from './renderDocument';
 
+import App from '../components/App';
 import ErrorMessage from '../components/ErrorMessage';
 import Root from '../components/Root';
 
@@ -12,9 +14,13 @@ export default function handleErrorMiddleware(err, req, res, next) {
 	}
 
 	const markup = renderDocument(
-		<Root>
-			<ErrorMessage error={err} />
-		</Root>,
+		<Provider store={req.store}>
+			<Root>
+				<App>
+					<ErrorMessage error={err} />
+				</App>
+			</Root>
+		</Provider>,
 		req.store.getState(),
 	);
 

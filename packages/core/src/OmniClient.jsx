@@ -7,6 +7,7 @@ import { browserHistory, Router } from 'react-router';
 import { combineReducers, createStore } from 'redux';
 
 import Omni from './Omni';
+import App from './components/App';
 import NotFoundError from './components/NotFoundError';
 import middleware from './utils/reduxMiddleware';
 
@@ -16,9 +17,14 @@ export default class OmniClient extends Omni {
 			plugin(this.pluginApi);
 		});
 
-		this.addRoute({
-			path: '*',
-			component: NotFoundError,
+		this.addPlainRoute({
+			component: App,
+			childRoutes: [
+				{
+					path: '*',
+					component: NotFoundError,
+				},
+			],
 		});
 
 		const store = createStore(
