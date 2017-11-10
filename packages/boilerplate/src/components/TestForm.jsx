@@ -38,7 +38,7 @@ export class TestForm extends React.PureComponent {
 	}
 }
 
-export default withForm({
+export default withForm(() => ({
 	fields: {
 		first_name: {
 			type: 'text',
@@ -110,4 +110,4 @@ export default withForm({
 			hint: 'Choose an image...',
 		},
 	},
-})(TestForm);
+}))(TestForm);

@@ -1,23 +1,33 @@
 import hoistStatics from 'hoist-non-react-statics';
+import PT from 'prop-types';
 import React from 'react';
 
 import inputTypes from '../inputs';
 import css from '../styles/form.css';
 
-export default config => WrappedForm => hoistStatics(class Form extends React.PureComponent {
+export default configFn => WrappedForm => hoistStatics(class Form extends React.PureComponent {
+	static propTypes = {
+		values: PT.objectOf(PT.any),
+	};
+
 	static defaultProps = {
 		values: {},
 	};
 
-	constructor({ values }) {
+	constructor(props) {
 		super();
 
 		this.fieldCache = {};
+		this.config = configFn(props);
 
 		this.state = {
 			errors: {},
-			values: this.generateDefaultValues(values),
+			values: this.generateDefaultValues(props.values),
 		};
+	}
+
+	componentWillReceiveProps(props) {
+		this.config = configFn(props);
 	}
 
 	handleUpdate = field => value => {
@@ -56,13 +66,13 @@ export default config => WrappedForm => hoistStatics(class Form extends React.Pu
 	formValidate = () => {
 		const { values } = this.state;
 
-		const promises = Object.keys(config.fields)
+		const promises = Object.keys(this.config.fields)
 			.filter(fieldName => (
-				config.fields[fieldName].validators !== undefined
+				this.config.fields[fieldName].validators !== undefined
 			))
 			.map(fieldName => this.fieldValid(
 				fieldName,
-				config.fields[fieldName].validators,
+				this.config.fields[fieldName].validators,
 				values[fieldName],
 			));
 
@@ -74,12 +84,12 @@ export default config => WrappedForm => hoistStatics(class Form extends React.Pu
 	generateDefaultValues(givenValues) {
 		const values = { ...givenValues };
 
-		Object.keys(config.fields).forEach(fieldName => {
+		Object.keys(this.config.fields).forEach(fieldName => {
 			if (values[fieldName] !== undefined) {
 				return;
 			}
 
-			const { type } = config.fields[fieldName];
+			const { type } = this.config.fields[fieldName];
 			values[fieldName] = inputTypes[type].defaultValue || '';
 		});
 
@@ -90,13 +100,13 @@ export default config => WrappedForm => hoistStatics(class Form extends React.Pu
 		const { values } = this.state;
 
 		const fields = {};
-		Object.keys(config.fields).forEach(fieldName => {
+		Object.keys(this.config.fields).forEach(fieldName => {
 			if (this.fieldCache[fieldName]) {
 				fields[fieldName] = this.fieldCache[fieldName];
 				return;
 			}
 
-			const { type, ...field } = config.fields[fieldName];
+			const { type, ...field } = this.config.fields[fieldName];
 			const InputType = inputTypes[type];
 
 			delete field.validators;
@@ -120,6 +130,7 @@ export default config => WrappedForm => hoistStatics(class Form extends React.Pu
 		return (
 			<div className={css.form}>
 				<WrappedForm
+					{...this.props}
 					fields={this.generateFields()}
 					formValidate={this.formValidate}
 					values={this.state.values}
