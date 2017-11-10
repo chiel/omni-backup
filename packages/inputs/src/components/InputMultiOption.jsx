@@ -7,25 +7,25 @@ import css from '../styles/input-options.css';
 
 export class InputMultiOption extends React.PureComponent {
 	static propTypes = {
+		defaultValue: PT.arrayOf(PT.string),
 		name: PT.string.isRequired,
 		options: PT.arrayOf(PT.shape({
 			label: PT.string.isRequired,
 			value: PT.string.isRequired,
 		})).isRequired,
 		onUpdate: PT.func.isRequired,
-		value: PT.arrayOf(PT.string),
 	};
 
 	static defaultProps = {
-		value: [],
+		defaultValue: [],
 	};
 
 	static defaultValue = [];
 
-	constructor({ value }) {
+	constructor({ defaultValue }) {
 		super();
 
-		this.state = { selected: value };
+		this.state = { selected: defaultValue };
 	}
 
 	handleChange = ev => {
@@ -45,8 +45,8 @@ export class InputMultiOption extends React.PureComponent {
 		const { name, options, ...props } = this.props;
 		const { selected } = this.state;
 
+		delete props.defaultValue;
 		delete props.onUpdate;
-		delete props.value;
 
 		return (
 			<div>
