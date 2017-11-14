@@ -1,6 +1,7 @@
 import './utils/cssLoader';
 
 import createEnsureAuthMiddleware from '@ocm/auth/dist/createEnsureAuthMiddleware';
+import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
@@ -20,6 +21,7 @@ export default class OmniServer extends Omni {
 		this.api = express();
 		this.api.disable('x-powered-by');
 		this.api.use(cors());
+		this.api.use(bodyParser.json());
 		this.pluginApi.api = this.api;
 
 		this.app = express();
