@@ -122,6 +122,7 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 
 			fields[fieldName] = () => (
 				<InputType
+					name={fieldName}
 					{...field}
 					defaultValue={deepGet(values, this.getFieldPath(fieldName))}
 					error={this.state.errors[fieldName]}
