@@ -30,7 +30,7 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 		this.config = configFn(props);
 	}
 
-	handleUpdate = field => value => {
+	createHandleUpdate = field => value => {
 		this.setState({
 			values: {
 				...this.state.values,
@@ -107,6 +107,7 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 			}
 
 			const { type, ...field } = this.config.fields[fieldName];
+			const handleUpdate = this.createHandleUpdate(fieldName);
 			const InputType = inputTypes[type];
 
 			delete field.validators;
@@ -116,7 +117,7 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 					{...field}
 					defaultValue={values[fieldName]}
 					error={this.state.errors[fieldName]}
-					onUpdate={this.handleUpdate(fieldName)}
+					onUpdate={handleUpdate}
 				/>
 			);
 
