@@ -4,6 +4,7 @@ import React from 'react';
 
 import inputTypes from '../inputs';
 import css from '../styles/form.css';
+import { deepGet, immutableDeepSet } from '../utils/objectHelpers';
 
 export default configFn => WrappedForm => hoistStatics(class Form extends React.PureComponent {
 	static propTypes = {
@@ -30,13 +31,18 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 		this.config = configFn(props);
 	}
 
-	createHandleUpdate = field => value => {
-		this.setState({
-			values: {
-				...this.state.values,
-				[field]: value,
-			},
-		});
+	getFieldPath(fieldName) {
+		return (this.config.fields[fieldName].name || fieldName)
+			.replace(/\]/g, '')
+			.replace(/\[/g, '.');
+	}
+
+	createHandleUpdate = fieldName => {
+		const path = this.getFieldPath(fieldName);
+		return value => {
+			const values = immutableDeepSet(this.state.values, path, value);
+			this.setState({ values });
+		};
 	}
 
 	fieldValid(fieldName, validators, value) {
@@ -82,15 +88,17 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 
 	// eslint-disable-next-line class-methods-use-this
 	generateDefaultValues(givenValues) {
-		const values = { ...givenValues };
+		let values = { ...givenValues };
 
 		Object.keys(this.config.fields).forEach(fieldName => {
-			if (values[fieldName] !== undefined) {
+			const path = this.getFieldPath(fieldName);
+			const value = deepGet(values, path);
+			if (value !== undefined) {
 				return;
 			}
 
 			const { type } = this.config.fields[fieldName];
-			values[fieldName] = inputTypes[type].defaultValue || '';
+			values = immutableDeepSet(values, path, inputTypes[type].defaultValue || '');
 		});
 
 		return values;
@@ -115,7 +123,7 @@ export default configFn => WrappedForm => hoistStatics(class Form extends React.
 			fields[fieldName] = () => (
 				<InputType
 					{...field}
-					defaultValue={values[fieldName]}
+					defaultValue={deepGet(values, this.getFieldPath(fieldName))}
 					error={this.state.errors[fieldName]}
 					onUpdate={handleUpdate}
 				/>
