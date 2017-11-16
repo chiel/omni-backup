@@ -7,6 +7,16 @@ export default function callApi(endpoint, options = {}) {
 
 	const url = host + endpoint;
 
+	options.headers = options.headers || {};
+
+	if (!options.headers.accept) {
+		options.headers.accept = 'application/json';
+	}
+
+	if (!options.headers['content-type']) {
+		options.headers['content-type'] = 'application/json; charset=utf-8';
+	}
+
 	return fetch(url, options)
 		.then(res => (
 			res.json().then(body => {
