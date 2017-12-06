@@ -10,6 +10,7 @@
     "@ocm/auth": "0.0.1",
     "@ocm/inputs": "0.0.1",
     "@ocm/mysql": "0.0.1",
+    "@ocm/role": "0.0.1",
     "@ocm/user": "0.0.1",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",

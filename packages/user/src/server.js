@@ -1,3 +1,5 @@
+import init from './init';
+
 const createTableQuery = (
 	`create table if not exists user (
 		id int(11) not null auto_increment,
@@ -12,5 +14,10 @@ const createTableQuery = (
 );
 
 export default function userPlugin(omni) {
-	omni.mysql.createTable('user', createTableQuery);
+	init(omni);
+
+	omni.mysql.createTable('user', createTableQuery)
+		.catch(err => {
+			console.error(err);
+		});
 }

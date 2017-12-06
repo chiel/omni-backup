@@ -1,6 +1,7 @@
 import authPlugin from '@ocm/auth';
 import inputsPlugin from '@ocm/inputs';
 import mysqlPlugin from '@ocm/mysql';
+import rolePlugin from '@ocm/role';
 import userPlugin from '@ocm/user';
 
 import inputTypes from './inputs';
@@ -19,6 +20,7 @@ export default class Omni {
 		mysqlPlugin,
 		inputsPlugin,
 		authPlugin,
+		rolePlugin,
 		userPlugin,
 	];
 

@@ -1,5 +1,5 @@
 import init from './init';
 
-export default function userPlugin(omni) {
+export default function rolePlugin(omni) {
 	init(omni);
 }
