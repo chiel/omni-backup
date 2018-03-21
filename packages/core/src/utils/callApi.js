@@ -13,7 +13,7 @@ export default function callApi(endpoint, options = {}) {
 		options.headers.accept = 'application/json';
 	}
 
-	if (!options.headers['content-type']) {
+	if (!options.headers['content-type'] && (!options.body || !(options.body instanceof FormData))) {
 		options.headers['content-type'] = 'application/json; charset=utf-8';
 	}
 
